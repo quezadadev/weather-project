@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CardsContainer from "../components/CardsContainer";
 import axios from "axios";
 
 const Home = () => {
@@ -25,7 +26,8 @@ const Home = () => {
 
   return (
     <div>
-     <h1>Home {data.ip_address}</h1>
+    <CardsContainer />
+     {/* <h1>Home {data.ip_address}</h1> */}
     </div>
   )
 }
