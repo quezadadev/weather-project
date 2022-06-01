@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-function App() {
+const App = () => {
+  const [data, setData] = useState({});
+  
+  const getData = async () => {
+    try { 
+      const URL = `https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_ABSTRACT_KEY}`;
+      const res  = await axios(URL);
+      setData(res.data);
+    } 
+    catch (err) {
+    throw new Error('Unable to get a token.')
+  }
+  };
+  
+  useEffect(() => {
+    getData();
+  }, []);
+
+  console.log(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_ABSTRACT_KEY}&postal_code=94103`);
+  console.log(data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <h1>App </h1>
+     <h1>App {data.ip_address}</h1>
     </div>
   );
 }
