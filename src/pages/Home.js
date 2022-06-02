@@ -21,14 +21,13 @@ const Home = () => {
         getData();
     }, []);
 
-  console.log(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_ABSTRACT_KEY}&postal_code=94103`);
-  console.log(data);
+  // console.log(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_ABSTRACT_KEY}&postal_code=94103`);
+  // console.log(data);
 
   return (
-    <div>
-    <CardsContainer />
-     {/* <h1>Home {data.ip_address}</h1> */}
-    </div>
+    <>
+      <CardsContainer />
+    </>
   )
 }
 
