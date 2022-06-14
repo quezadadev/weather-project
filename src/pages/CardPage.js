@@ -1,7 +1,18 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Button, Card, CardBody, CardColumns,CardImg, CardSubtitle, CardText, CardTitle } from 'reactstrap';
 
 const CardPage = () => {
+  
+  const navigate = useNavigate();
+  // const location = useLocation();
+  // const {  } =  location.state;
+  
+
+  const handleClick = () => {
+    navigate('/');
+  }
+
   return (
     <CardColumns>
     <Card>
