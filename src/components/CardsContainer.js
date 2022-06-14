@@ -1,7 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Card, CardBody, CardGroup,CardImg, CardSubtitle, CardText, CardTitle } from 'reactstrap';
 
-const CardsContainer = () => {
+const CardsContainer = ({ weather }) => {
+  console.log('The Weather');
+  console.log(weather);
+  // Filter
+  // covert
   return (
     <div style={{"max-width": "75%"}}>
       <CardGroup>

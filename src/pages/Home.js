@@ -22,7 +22,7 @@ const Home = () => {
       try { 
         const URL = `https://api.weatherbit.io/v2.0/forecast/daily?city=Berlin&key=${process.env.REACT_APP_WEATHERBIT_KEY}`;
         const res  = await axios(URL);
-        setWeather(res.data);
+        setWeather(res.data.data);
       } 
       catch (err) {
       throw new Error('Unable to get a token.')
@@ -36,13 +36,13 @@ const Home = () => {
 
   // console.log(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_ABSTRACT_KEY}&postal_code=94103`);
   // console.log(data);
-  console.log(weather)
+  // console.log(weather)
   // console.log(`https://api.weatherbit.io/v2.0/forecast/daily?city=Frankfurt&key=${process.env.REACT_APP_WEATHER_BIT_KEY}`);
   console.log(process.env.REACT_APP_WEATHERBIT_KEY);
 
   return (
     <>
-      <CardsContainer />
+      <CardsContainer weather={ weather } />
     </>
   )
 }
