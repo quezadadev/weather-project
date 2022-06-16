@@ -6,6 +6,7 @@ const Home = () => {
 
     // const [data, setData] = useState({});
     const [weather, setWeather] = useState({});
+    const [city, setCity] = useState('');
   
   //   const getData = async () => {
   //   try { 
@@ -23,6 +24,7 @@ const Home = () => {
         const URL = `https://api.weatherbit.io/v2.0/forecast/daily?city=Berlin&key=${process.env.REACT_APP_WEATHERBIT_KEY}`;
         const res  = await axios(URL);
         setWeather(res.data.data);
+        setCity(res.data.city_name);
       } 
       catch (err) {
       throw new Error('Unable to get a token.')
@@ -42,7 +44,9 @@ const Home = () => {
 
   return (
     <>
-      <CardsContainer weather={ weather } />
+      <CardsContainer 
+      weather={ weather } 
+      city={ city }/>
     </>
   )
 }
