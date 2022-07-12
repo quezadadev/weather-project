@@ -9,11 +9,8 @@ const Header = () => {
       expand="md"
       light
     >
-      <NavbarBrand href="/">
-        <h2 className='text-center'> Weatherboard </h2>
-      </NavbarBrand>
-      <NavbarToggler onClick={function noRefCheck(){}} />
-      {/* <h2 className='text-center'> Weatherboard </h2> */}
+  
+      <h2 className='ml-auto m-3'> Weather Byte </h2>
       
     </Navbar>
   </div>

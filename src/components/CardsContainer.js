@@ -12,14 +12,14 @@ const CardsContainer = ({ weather, city }) => {
   }
   console.log(sevenDayForecast);
 
-  // covert
+  // Convert Celsius to Fahrenheit
   const toFahrenheit = (celsius) => {
-    return (celsius * 1.8) + 32
+    return Math.round((celsius * 1.8) + 32);
   }
 
   return (
     <div style={{"max-width": "90%"}}>
-      <h2> { city } </h2>
+      <h3> { city } </h3>
        <CardGroup>
       { sevenDayForecast.map( obj => {
         return  <Card>
