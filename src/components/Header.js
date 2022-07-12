@@ -3,14 +3,16 @@ import { Collapse, DropdownItem, DropdownMenu, DropdownToggle, Nav, Navbar, Navb
 
 const Header = () => {
   return (
-    <div>
+    <div className=''>
     <Navbar
       color="light"
       expand="md"
       light
     >
   
-      <h2 className='ml-auto m-3'> Weather Byte </h2>
+      <h2 className='m-3'> 
+        Weather Byte 
+      </h2>
       
     </Navbar>
   </div>

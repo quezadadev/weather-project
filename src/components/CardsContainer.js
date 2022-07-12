@@ -18,11 +18,11 @@ const CardsContainer = ({ weather, city }) => {
   }
 
   return (
-    <div style={{"max-width": "90%"}}>
-      <h3> { city } </h3>
+    <div style={{"max-width": "80%", "margin": "0 auto"}}>
+      <h3 className='d-flex justify-content-center'> { city } </h3>
        <CardGroup>
       { sevenDayForecast.map( obj => {
-        return  <Card>
+        return  <Card className='m-2'>
         <CardImg
           alt="Card image cap"
           src="https://picsum.photos/318/180"
