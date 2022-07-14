@@ -18,7 +18,7 @@ const Home = () => {
       throw new Error('Unable to get a token.')
     }
       };
-  
+
     useEffect(() => {
         getWeather();
     }, []);
