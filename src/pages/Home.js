@@ -6,10 +6,15 @@ const Home = () => {
 
     const [weather, setWeather] = useState({});
     const [city, setCity] = useState('');
+    const [newSearch, setNewSearch] = useState('')
+
+    const handleSearch = (e)=> {
+      setNewSearch(e.target.value);
+    };
 
     const getWeather = async () => {
       try { 
-        const URL = `https://api.weatherbit.io/v2.0/forecast/daily?city=Berlin&key=${process.env.REACT_APP_WEATHERBIT_KEY}`;
+        const URL = `https://api.weatherbit.io/v2.0/forecast/daily?city=${newSearch}&key=${process.env.REACT_APP_WEATHERBIT_KEY}`;
         const res  = await axios(URL);
         setWeather(res.data.data);
         setCity(res.data.city_name);
@@ -29,7 +34,10 @@ const Home = () => {
     <>
       <CardsContainer 
       weather={ weather } 
-      city={ city }/>
+      city={ city }
+      newSearch={newSearch}
+      handleSearch={handleSearch}
+      />
     </>
   )
 }

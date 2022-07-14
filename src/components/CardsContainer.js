@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
+import React, { useId } from 'react';
 import { Link } from 'react-router-dom';
 import Search from './Search';
 import { Button, Card, CardBody, CardGroup,CardImg, CardSubtitle, CardText, CardTitle } from 'reactstrap';
 
-const CardsContainer = ({ weather, city }) => {
+const CardsContainer = ({ weather, newSearch, handleSearch }) => {
   console.log('The Weather');
-  const [newSearch, setNewSearch] = useState('')
-
-  const handleSearch = (e)=> {
-    setNewSearch(e.target.value);
-  };
-
-  
+  const ID = useId();
   // Filter for 7 days
   const sevenDayForecast = [];
 
   for (let i = 0; i < 7; i++){
+    if (newSearch === ''){
+      continue
+    }
+    else {
     sevenDayForecast.push(weather[i]);
+    }
   }
   console.log(sevenDayForecast);
 
@@ -31,7 +30,7 @@ const CardsContainer = ({ weather, city }) => {
 
   return (
     <div style={{"max-width": "80%", "margin": "0 auto"}}>
-      <h3 className='mt-5 mb-5 text-secondary d-flex justify-content-center'> { city } </h3>
+      <h3 className='mt-5 mb-5 text-secondary d-flex justify-content-center'> { newSearch } </h3>
       <Search
           newSearch={newSearch} 
           handleSearch={handleSearch}
@@ -40,7 +39,7 @@ const CardsContainer = ({ weather, city }) => {
       { sevenDayForecast.map( obj => {
         return <Card  className='m-2'>
         <>
-        <Link to='cards/'>
+        <Link to={`/cards/${ID}`}>
         <CardImg
           alt="Card image cap"
           src="https://picsum.photos/318/180"
@@ -56,7 +55,7 @@ const CardsContainer = ({ weather, city }) => {
             className="mb-2 text-muted"
             tag="h6"
           >
-            <a href="http://cliparts.co/clipart/3674971" title="Image from cliparts.co"><img style={{"max-width": "80%"}} src="http://cliparts.co/cliparts/yik/rbK/yikrbKRaT.gif" width="350" alt="Cloudastound.GIF" /></a>
+            <a href="http://cliparts.co/clipart/3674971" title="Image from cliparts.co"><img style={{"max-width": "95%"}} src="http://cliparts.co/cliparts/yik/rbK/yikrbKRaT.gif" width="350" alt="Cloudastound.GIF" /></a>
           </CardSubtitle>
          
           <Button className='btn-primary'>

@@ -15,7 +15,7 @@ const StyledInput = styled.input`
   height: 20px;
   width: 450px;
   text-align: center;
-  border-radius: 50px;
+  border-radius: 70px;
   padding-left:15px;
   margin-bottom: 5px;
   padding: 1rem;
@@ -30,7 +30,6 @@ const Search = ({newSearch, handleSearch}) => {
       value={newSearch}
       onChange={handleSearch} 
     />
- 
    </StyledContainer>
   )
 }
