@@ -9,10 +9,11 @@ const Header = () => {
       expand="md"
       light
     >
-  
-      <h2 className='m-3'> 
-        Weather Byte 
+      <div className='mt-3 mb-3' style={{"margin": "0 auto"}}>
+      <h2 className='text-secondary'> 
+        Weather Bytes 
       </h2>
+      </div>
       
     </Navbar>
   </div>

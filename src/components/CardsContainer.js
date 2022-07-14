@@ -30,7 +30,9 @@ const CardsContainer = ({ weather, newSearch, handleSearch }) => {
 
   return (
     <div style={{"max-width": "80%", "margin": "0 auto"}}>
-      <h3 className='mt-5 mb-5 text-secondary d-flex justify-content-center'> { newSearch } </h3>
+      <h3 className='mt-5 mb-5 text-secondary d-flex justify-content-center'> 
+      { newSearch.toUpperCase() } 
+      </h3>
       <Search
           newSearch={newSearch} 
           handleSearch={handleSearch}
