@@ -11,7 +11,7 @@ const Header = () => {
     >
       <div className='mt-3 mb-3' style={{"margin": "0 auto"}}>
       <h2 className='text-secondary'> 
-        Weather Bytes
+        Weather Byte
   
       </h2>
       

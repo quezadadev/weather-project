@@ -1,6 +1,6 @@
 import React, { useId } from 'react';
 import { Link } from 'react-router-dom';
-import Search from './Search';
+import Search from '../Search';
 import { Button, Card, CardBody, CardGroup,CardImg, CardSubtitle, CardText, CardTitle } from 'reactstrap';
 
 const CardsContainer = ({ weather, city, newSearch, handleSearch, handleCity }) => {
@@ -50,7 +50,7 @@ const CardsContainer = ({ weather, city, newSearch, handleSearch, handleCity }) 
         </div>
        <CardGroup>
       { sevenDayForecast.map( obj => {
-        return <Card  className='m-2'>
+        return <Card  className='m-2 weather-card'>
         <>
         <Link to={`/cards/${ID}`}>
         <CardImg
