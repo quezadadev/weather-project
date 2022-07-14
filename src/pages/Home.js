@@ -12,9 +12,14 @@ const Home = () => {
       setNewSearch(e.target.value);
     };
 
+    const handleCity = (input)=> {
+      setCity(input);
+    };
+
+
     const getWeather = async () => {
       try { 
-        const URL = `https://api.weatherbit.io/v2.0/forecast/daily?city=${newSearch}&key=${process.env.REACT_APP_WEATHERBIT_KEY}`;
+        const URL = `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${process.env.REACT_APP_WEATHERBIT_KEY}`;
         const res  = await axios(URL);
         setWeather(res.data.data);
         setCity(res.data.city_name);
@@ -37,6 +42,7 @@ const Home = () => {
       city={ city }
       newSearch={newSearch}
       handleSearch={handleSearch}
+      handleCity={handleCity}
       />
     </>
   )

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Search from './Search';
 import { Button, Card, CardBody, CardGroup,CardImg, CardSubtitle, CardText, CardTitle } from 'reactstrap';
 
-const CardsContainer = ({ weather, newSearch, handleSearch }) => {
+const CardsContainer = ({ weather, city, newSearch, handleSearch, handleCity }) => {
   console.log('The Weather');
   const ID = useId();
   // Filter for 7 days
@@ -38,7 +38,15 @@ const CardsContainer = ({ weather, newSearch, handleSearch }) => {
           handleSearch={handleSearch}
           />
           <div className='text-center'>
-        <img alt='' style={{"max-width": "10%"}} src='https://cdn-icons.flaticon.com/png/512/2659/premium/2659295.png?token=exp=1657803158~hmac=b15c4340f81f588b7ca29fcbfb654282'></img>
+        <img className='animate__animated animate__bounce' alt='' style={{"max-width": "5%"}} src='https://cdn-icons.flaticon.com/png/512/2659/premium/2659295.png?token=exp=1657803158~hmac=b15c4340f81f588b7ca29fcbfb654282'></img>
+        </div>
+        <div className='text-center mt-5 mb-5'>
+        <Button onClick={ ()=> { 
+          city = newSearch 
+          handleCity(city)}
+          } className='btn-primary'>
+            Get your 7 Day forecast
+        </Button>
         </div>
        <CardGroup>
       { sevenDayForecast.map( obj => {
