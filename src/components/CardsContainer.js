@@ -37,6 +37,9 @@ const CardsContainer = ({ weather, newSearch, handleSearch }) => {
           newSearch={newSearch} 
           handleSearch={handleSearch}
           />
+          <div className='text-center'>
+        <img alt='' style={{"max-width": "10%"}} src='https://cdn-icons.flaticon.com/png/512/2659/premium/2659295.png?token=exp=1657803158~hmac=b15c4340f81f588b7ca29fcbfb654282'></img>
+        </div>
        <CardGroup>
       { sevenDayForecast.map( obj => {
         return <Card  className='m-2'>
