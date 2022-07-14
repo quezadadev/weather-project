@@ -4,6 +4,7 @@ import { Button, Card, CardBody, CardGroup,CardImg, CardSubtitle, CardText, Card
 
 const CardsContainer = ({ weather, city }) => {
   console.log('The Weather');
+  
   // Filter for 7 days
   const sevenDayForecast = [];
 
@@ -17,36 +18,44 @@ const CardsContainer = ({ weather, city }) => {
     return Math.round((celsius * 1.8) + 32);
   }
 
+  // const handleClick = () => {
+  //   navigate("/cards/:id");
+  // }
+
   return (
     <div style={{"max-width": "80%", "margin": "0 auto"}}>
       <h3 className='d-flex justify-content-center'> { city } </h3>
        <CardGroup>
       { sevenDayForecast.map( obj => {
-        return  <Card className='m-2'>
+        return <Card  className='m-2'>
+        <>
+        <Link to='cards/'>
         <CardImg
           alt="Card image cap"
           src="https://picsum.photos/318/180"
           top
           width="100%"
         />
+        
         <CardBody>
           <CardTitle tag="h5">
-            { toFahrenheit(obj.high_temp) }
+            <p>{ toFahrenheit(obj.high_temp) } Degrees </p>
           </CardTitle>
           <CardSubtitle
             className="mb-2 text-muted"
             tag="h6"
           >
-            Card subtitle
+            <a href="http://cliparts.co/clipart/3674971" title="Image from cliparts.co"><img style={{"max-width": "80%"}} src="http://cliparts.co/cliparts/yik/rbK/yikrbKRaT.gif" width="350" alt="Cloudastound.GIF" /></a>
           </CardSubtitle>
-          <CardText>
-            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-          </CardText>
-          <Button>
-            Button
+         
+          <Button className='btn-primary'>
+            Weather Byte
           </Button>
         </CardBody>
-            </Card>
+        
+        </Link>
+        </>
+        </Card>
       })}
       </CardGroup>
     </div>
